@@ -84,6 +84,7 @@ Homie autodiscovery info is best viewed with something like [MQTT Explorer](http
        - [Start zone preset (`start`)](#startzonepresetstart)
    - [Map data](#mapdata)
      - [Map (`map`)](#mapmap)
+     - [Map segments (`segments`)](#mapsegmentssegments)
      - [Raw map data (`map-data`)](#rawmapdatamap-data)
      - [Raw map data with Home Assistant hack (`map-data-hass-hack`)](#rawmapdatawithhomeassistanthackmap-data-hass-hack)
    - [Status](#status)
@@ -114,6 +115,7 @@ Homie autodiscovery info is best viewed with something like [MQTT Explorer](http
 - [Consumable (percent) (`sensor.mqtt`)](#consumablepercentconsumable-percent)
 - [GoTo Locations (`sensor.mqtt`)](#gotolocationgotolocationcapability)
 - [Map data (`camera.mqtt`)](#rawmapdatawithhomeassistanthackmap-data-hass-hack)
+- [Map segments (`sensor.mqtt`)](#mapsegmentssegments)
 - [Vacuum (`vacuum.mqtt`)](#robot)
 - [Water grade (`sensor.mqtt`)](#watergradeintensity)
 - [Wi-Fi configuration (`sensor.mqtt`)](#wi-ficonfigurationwificonfigurationcapability)
@@ -455,7 +457,7 @@ Sample value:
 Sample value:
 
 ```json
--60
+-45
 ```
 
 
@@ -565,6 +567,27 @@ This handle is added automatically if Home Assistant autodiscovery is enabled. I
 Home Assistant components controlled by this property:
 
 - Map data ([`camera.mqtt`](https://www.home-assistant.io/integrations/camera.mqtt/))
+
+
+
+#### Map segments (`segments`) <a id="mapsegmentssegments" />
+
+*Property, readable, retained*
+
+This property contains a JSON mapping of segment IDs to segment names.
+
+- Read topic: `<TOPIC PREFIX>/<IDENTIFIER>/MapData/segments`
+- Data type: [string](https://homieiot.github.io/specification/#string) (JSON)
+
+Sample value:
+
+```json
+{}
+```
+
+Home Assistant components controlled by this property:
+
+- Map segments ([`sensor.mqtt`](https://www.home-assistant.io/integrations/sensor.mqtt/))
 
 
 
