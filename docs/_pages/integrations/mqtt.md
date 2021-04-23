@@ -96,6 +96,7 @@ Homie autodiscovery info is best viewed with something like [MQTT Explorer](http
        - [Battery level (`level`)](#batterylevellevel)
        - [Battery status (`status`)](#batterystatusstatus)
      - [Vacuum status (`StatusStateAttribute`)](#vacuumstatusstatusstateattribute)
+       - [Error description (`error`)](#errordescriptionerror)
        - [Status (`status`)](#statusstatus)
        - [Status detail (`detail`)](#statusdetaildetail)
 
@@ -457,7 +458,7 @@ Sample value:
 Sample value:
 
 ```json
--45
+-47
 ```
 
 
@@ -716,6 +717,17 @@ Sample value:
 ```
 segment
 ```
+
+
+
+##### Error description (`error`) <a id="errordescriptionerror" />
+
+*Property, readable, retained*
+
+The error description will only be populated when the robot reports an error. Errors in Valetudo not reported by the robot won't be sent here.
+
+- Read topic: `<TOPIC PREFIX>/<IDENTIFIER>/StatusStateAttribute/error`
+- Data type: [string](https://homieiot.github.io/specification/#string)
 
 
 
