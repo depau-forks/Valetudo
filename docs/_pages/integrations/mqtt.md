@@ -114,6 +114,7 @@ Homie autodiscovery info is best viewed with something like [MQTT Explorer](http
 
 - [Consumable (minutes) (`sensor.mqtt`)](#consumableminutesconsumable-minutes)
 - [Consumable (percent) (`sensor.mqtt`)](#consumablepercentconsumable-percent)
+- [Error description (`sensor.mqtt`)](#errordescriptionerror)
 - [GoTo Locations (`sensor.mqtt`)](#gotolocationgotolocationcapability)
 - [Map data (`camera.mqtt`)](#rawmapdatawithhomeassistanthackmap-data-hass-hack)
 - [Map segments (`sensor.mqtt`)](#mapsegmentssegments)
@@ -458,7 +459,7 @@ Sample value:
 Sample value:
 
 ```json
--47
+-56
 ```
 
 
@@ -728,6 +729,10 @@ The error description will only be populated when the robot reports an error. Er
 
 - Read topic: `<TOPIC PREFIX>/<IDENTIFIER>/StatusStateAttribute/error`
 - Data type: [string](https://homieiot.github.io/specification/#string)
+
+Home Assistant components controlled by this property:
+
+- Error description ([`sensor.mqtt`](https://www.home-assistant.io/integrations/sensor.mqtt/))
 
 
 
