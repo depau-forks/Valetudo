@@ -82,6 +82,7 @@ If you on Hass.io and want the map also on your dashboards of Home Assistant, us
 ### Automation for Valetudo version upgrade.
 
 You need two sensors:
+{% raw %}
 ```yaml
 - platform: mqtt
   name: version_valetudo
@@ -94,8 +95,9 @@ You need two sensors:
   command: curl -s https://github.com/Hypfer/Valetudo/releases/latest | cut -d'"' -f2 | rev | cut -d'/' -f1 | rev
   scan_interval: 21600
 ```
+{% raw %}
 In Automations:
-
+{% raw %}
 ```yaml
 - id 'Your ID'
   alias: New Valetudo SW Version
@@ -117,3 +119,4 @@ In Automations:
   mode: single
 ...
 ```
+{% raw %}
